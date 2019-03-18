@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>每日一记</title>{{template "comm/link.html"}}
+    <link href="../static/css/buju.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/sliders.js"></script>
+    <style type="text/css">
+        .main-header-div{
+            position: fixed;
+            z-index: 100;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 70px;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div{
+            position: fixed;
+            z-index: 101;
+            top: 0px;
+            left: 0px;
+            width: 1002px;
+            height: 46px;
+            background: white;
+            margin-left:450px;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div2{
+            position: fixed;
+            z-index: 101;
+            top: 10px;
+            left: 0px;
+            height: 46px;
+            width: 100%;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .content {
+            position: relative;
+            top: 50px;
+            /*line-height: 70px;*/
+        }
+        .body-back{
+            /*font-family: "华文细黑";*/
+            background:url("/static/image/timg.jpg") no-repeat;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size: 100%;
+        }
+        .mood-back{
+            /*font-family: "华文细黑";*/
+            background:url("/static/image/mood.jpg") no-repeat;
+            background-repeat:no-repeat;
+            /*background-attachment:fixed;*/
+            background-size: 100% 100%;
+        }
+        .layui-form-label {
+            width: 50px;
+        }
+
+        .layui-input-block {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-width: 450px) {
+            .layui-form-item .layui-input-inline {
+                margin: 0 0 10px 80px;
+            }
+        }
+
+    </style>
+</head>
+<body class="lay-blog body-back" >
+{{template "comm/header_tutu.html".}}
+    <div  style="width: 1920px;">
+        <div class="container-wrap">
+            <div class="container" style="position: fixed;height: 60%">
+                <div class="contar-wrap">
+                    <h4 class="item-title">
+                        <p style="text-align: center">
+                            <span style="float: left;left: 10px" id="title1">{{.note.Title}}</span>
+                            <i class="layui-icon layui-icon-speaker"></i><span>天气：阴</span>
+                            <span style="float: right;margin-right: 20px">发布于：{{date .note.CreatedAt "Y-m-d H:i:s"}}</span>
+                        </p>
+                    </h4>
+
+                    <div class="item">
+                        <div class="item-box  layer-photos-demo1 layer-photos-demo mood-back">
+                            <div class="body" style="overflow-y: auto">
+                                <div style="margin:0px auto 0;min-height:100%;padding:120px 0 160px 0;box-sizing: border-box;float: left;width: 15%;margin-left:15px;writing-mode:tb-rl;position: relative">
+                                    <span><b id="title2">《{{.note.Title}}》</b></span>
+                                <br>
+                                    <br>
+                                    <br>
+                                    <span>
+                                    {{/*{{date .note.UpdatedAt "Y-m-d H:i:s"}}*/}}
+                                        <b id="date1" style="float: right">{{.datacha}} · 書</b>
+                                    </span>
+                                </div>
+                                <div style="text-align:justify;text-justify:inter-word;text-justify:inter-ideograph;margin:0px auto 0;min-height:100%;padding:120px 0 160px 0;box-sizing: border-box;float: right;width: 40%;right: 30%;/*margin-left:200px;*/position: relative">
+                                    <text id = "content1">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                                    <text id = "content2"  style="text-align-last: justify;">{{str2html .note.Summary}}</text>
+                                    {{/*<textarea cols="10">{{str2html .note.Summary}}</textarea>*/}}
+                                    <text id = "content3" hidden="true">{{str2html .note.Summary}}</text>
+                                </div>
+                            </div>
+                        {{/*<img src="../res/static/image/item.png" alt="">*/}}
+                            <div class="count layui-clear">
+                                <span class="pull-left" style="background: #f9f9f9;width: 70px;height: 20px;border-radius: 3px;text-align: center">阅读（ <em>{{.note.Visit}}</em>）</span>
+                                <span class="pull-right" style="background: #f9f9f9;width: 70px;height: 20px;border-radius: 3px;text-align: center">翻页（ <em id="fanye">1</em>）</span>
+                                {{/*<span class="pull-right like {{if .praise}}layblog-this{{end}}" data-type="note"
+                                      data-key="{{.note.Key}}">
+                            <i class="layui-icon layui-icon-praise"></i>
+                            <em class="value">{{.note.Praise}}</em>
+                        </span>*/}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               {{/* <div class="item-btn">
+                {{if gt .page 1}}
+                    <button class="layui-btn layui-btn-normal"
+                            onclick="window.location.href='/?page={{add .page -1 }}&title={{.title}}'">
+                        上一页
+                    </button>
+                {{end}}
+                {{if lt .page .totpage}}
+                    <button class="layui-btn layui-btn-normal"
+                            onclick="window.location.href='/?page={{add .page 1 }}&title={{.title}}'"
+                    >下一页
+                    </button>
+                {{end}}
+                </div>
+                <input id="curpage" type="hidden" value="{{.page}}">*/}}
+            </div>
+        </div>
+        <div class="container-wrap2">
+            <div class="container" style="width: 280px;position: fixed;right: 15%">
+                <div class="contar-wrap">
+                    <h4 class="item-title">
+                        <p><i class="layui-icon layui-icon-speaker"></i>快速导航：<span>分类阅读</span></p>
+                    </h4>
+                    <div class="item">
+                        <div class="comment count">
+                            <a href="">我们的家</a>
+                            <a href="/shige">诗歌小憩</a>
+                        </div>
+                        <div class="comment count">
+                            <a href="/details/{{.Key}}#comment">IT学习</a>
+                            <a href="javascript:;" class="like" data-key="{{.Key}}" data-type="note">散文杂记</a>
+                        </div>
+                        <div class="comment count">
+                            <a href="/details/{{.Key}}#comment">游戏娱乐</a>
+                            <a href="javascript:;" class="like" data-key="{{.Key}}" data-type="note">奇思妙想</a>
+                        </div>
+                        <div class="comment count">
+                            <a href="/simple/photo">家族相册</a>
+                            <a href="javascript:;" class="like" data-key="{{.Key}}" data-type="note">个人简介</a>
+                        </div>
+                    </div>
+                    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                        <legend>沧海桑田，带不走曾经</legend>
+                    </fieldset>
+
+                    <div class="site-demo-laydate">
+                        <div class="layui-inline" id="test-n1"></div>
+                        {{/*<div class="layui-inline" id="test-n2"></div>
+                        <div class="layui-inline" id="test-n3"></div>
+                        <div class="layui-inline" id="test-n4"></div>*/}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/*{{template "comm/footer.html" .}}*/}}
+    </div>
+
+{{/*<script src="/static/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function () {
+        var element = layui.element;
+
+    });
+</script>*/}}
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use('laydate', function(){
+        $("#content2").html($("#content3").html().substr(0,265));
+        var laydate = layui.laydate;
+        //直接嵌套显示
+        laydate.render({
+            elem: '#test-n1'
+            ,position: 'static'
+            ,change: function(value, date, endDate){
+                $.ajax({
+                    type:"get",
+                    url:"/moodajax",
+                    dataType:"json",
+                    data:value,
+                    cache:false,
+                    async:false,
+                    timeout:60000,
+                    success:function(data) {
+                        retData = data;
+                        $("#date1").html(retData.data.Files+" · 書")
+                        $("#title1").html(retData.data.Title)
+                        $("#title2").html("《"+retData.data.Title+"》")
+                        $("#content2").html(retData.data.Summary.substr(0,265))
+                        $("#content3").html(retData.data.Summary)
+                    },
+                    error:function(err) {
+                        retData.exception = err;
+                        retData.msg = err.responseText || "请求失败";
+                    }
+                });
+            }
+        });
+        laydate.render({
+            elem: '#test-n2'
+            ,position: 'static'
+            ,lang: 'en'
+        });
+        laydate.render({
+            elem: '#test-n3'
+            ,type: 'month'
+            ,position: 'static'
+        });
+        laydate.render({
+            elem: '#test-n4'
+            ,type: 'time'
+            ,position: 'static'
+        });
+
+        $('.pull-right').on('click',function () {
+            $("#content1").remove()
+            conlen = $("#content3").html().length
+            totalyeshu = conlen/265
+            yeshu = Number($("#fanye").html())
+
+            if (yeshu >= totalyeshu) {
+                lay.alert("a","c","b")
+                return
+            }
+
+            $("#fanye").html(Number($("#fanye").html())+1)
+            $("#content2").html($("#content3").html().substr(yeshu*265,265))
+        });
+    });
+</script>
+<script type="text/javascript">
+    var contentheight = 620
+    var note = {notes:{{.notes}}};//多个参数用，分开
+    var notess = {{.notes}} // 等价于note.notes
+   /* if (notess.length > 2) {
+       contentheight = contentheight + 300 * (notess.length - 2)
+    }*/
+
+    $('.body-back').css('height',contentheight+'px');
+</script>
+</body>
+</html>

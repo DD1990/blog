@@ -1,0 +1,316 @@
+.listDiv{
+    position: relative;
+    width: 1280px;
+    background-color: white;
+    height: auto;
+    margin-top: 30px;
+}
+.top-div{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 40px;
+    border-bottom: 1px solid #dcdcdc;
+}
+.left-list-div{
+    position: relative;
+    float: left;
+    width: 879px;
+    height: 100%;
+}
+.right-list-div{
+    position: relative;
+    border-left: 1px solid #dcdcdc;
+    float: right;
+    width: 400px;
+    height: 1500px;
+}
+.list-title-div{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: -5px;
+    line-height: 30px;
+    text-indent: 1em;
+    border-left: 6px solid #ff3f5d;
+    text-align: left;
+    color: #606060;
+}
+.quickMenu{
+    float: left;
+    margin-right: 20px;
+    color: #636363;
+}
+.quickMenu:hover{
+    cursor: pointer;
+    color: #0f0f0f;
+}
+.web-title-div{
+    position: relative;
+    float: left;
+    width: 800px;
+    height: 26px;
+    margin: 40px auto 10px auto;
+    line-height: 26px;
+    text-indent: 1em;
+    border-left: 4px solid #654aff;
+    text-align: left;
+    color: #606060;
+}
+.web-title-div2,.web-title-div3{
+    position: relative;
+    float: left;
+    width: 800px;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 1em;
+    border-left: 4px solid white;
+    text-align: left;
+    color: #606060;
+}
+.web-title-div3{
+    height: 50px;
+    text-indent: 3em;
+    line-height: 50px;
+}
+.link-span{
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    color: gray;
+}
+.link-span:hover{
+    cursor: pointer;
+    color: black;
+}
+.link-div{
+    position: relative;
+    line-height: 50px;
+    height: 50px;
+    width: 800px;
+    text-align: left;
+    background-color: red;
+}
+.list-head-div{
+    position: relative;
+    margin-top: 60px;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    line-height: 100px;
+}
+.website-div-pub{
+    position: relative;
+    width: 1300px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+.menu-web-link-div{
+    position: relative;
+    width: 305px;
+    float: left;
+    margin-right: 20px;
+    height: 100%;
+    border-radius: 2px;
+    padding: 8px;
+}
+.menu-web-link-title{
+    position: relative;
+    margin-bottom: 10px;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+}
+.menu-web-link{
+    color: #f0f0f0;
+    float: left;
+    margin-right: 15px;
+}
+.menu-web-link:hover{
+    cursor: pointer;
+    color: white;
+}
+.menu-web-links{
+    line-height: 28px;
+}
+.layout-list-title-div{
+    height: 20px;
+    line-height: 20px;
+    border-left: 5px solid #ff5550;
+    color: #666;
+    text-align: left;
+    text-indent: 1em;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.zhuanlan-divs{
+    position: relative;
+    width: 100%;
+    min-height: 50px;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.zhuanlan-divs:hover{
+    cursor: pointer;
+    border-radius: 0px;
+}
+.zhuanlan-title{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    line-height: 28px;
+    color: white;
+    text-align: left;
+    top: 15px;
+    background-color: #3b3b3b;
+    opacity: 0.7;
+    padding: 5px 10px;
+}
+.flush-list{
+    float: right;
+}
+.flush-list:hover{
+    cursor: pointer;
+    color: black;
+}
+
+
+.tuijian-left-div,.tuijian-right-div{
+    position: relative;
+    height: auto;
+    width: 48%;
+    float: left;
+    margin: 15px auto;
+    max-height: 350px;
+    overflow-y: hidden;
+}
+
+.tuijian-right-div{
+    float: right;
+}
+.tuijian-zhutu{
+    float: left;
+    width: 50%;
+    margin-right: 3%;
+}
+.tuijian-link-div{
+    float: right;
+    width: 47%;
+}
+.tuijian-title{
+    line-height: 40px;
+    text-align: left;
+}
+.tuijian-link{
+    font-size: 12px;
+    color: #7a7a7a;
+    margin: 5px;
+    float: left;
+}
+.tuijian-link:hover{
+    cursor: pointer;
+    color: black;
+}
+.gonglue_city_img{
+    height: 100%;
+    width: 170px;
+    margin-right: 30px;
+    float: left;
+    margin-top: 10px;
+}
+.chang-btn-right, .chang-btn-left{
+    float: right;
+    background-color: white;
+    border: 1px solid #cdcdcd;
+    margin: 0px 7px;
+    padding: 3px 5px 3px 10px;
+}
+.chang-btn-right{
+    padding: 3px 0px 3px 15px;
+}
+.chang-btn-right:hover, .chang-btn-left:hover{
+    cursor: pointer;
+    background-color: #ebebeb;
+}
+.travel-local-info{
+    position: relative;
+    width: 240px;
+    padding: 20px 40px;
+    float: left;
+    margin-right: 30px;
+    height: 200px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px #f1f1f1;
+}
+.travel-local-info:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #dcdcdc;
+}
+.travel-local-img-info{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.travel-local-img-info img{
+    border-radius: 5px;
+}
+.travel-local-text-info{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    text-indent: 5px;
+    color: #414141;
+    font-family: "Times New Roman";
+}
+.chat-list-div{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #363636;
+    font-size: 13px;
+    font-weight: 400;
+}
+.chat-list-div label{
+    margin-left: 20px;
+}
+.chat-list-div input{
+    margin-right: 6px;
+}
+.chat-list-input{
+    position: relative;
+    float: left;
+    width: 720px;
+    height: 70px;
+    text-align: left;
+    line-height: 27px;
+    font-size: 13px;
+    padding: 10px 20px;
+    background-color: #fbfbfb;
+    border: 0px;
+    resize: none;
+    border: 1px solid #eeeeee;
+}
+.chat-list-btn{
+    position:absolute;
+    right: 20px;
+    top: 56px;
+    width: 100px;
+    height: 66px;
+    background-color: #16b4ff;
+    color: white;
+    border: 0px;
+    border-radius: 2px;
+}
+.chat-list-btn:hover{
+    background-color: #1399d8;
+}

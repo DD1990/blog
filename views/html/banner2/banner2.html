@@ -1,0 +1,126 @@
+
+
+<script src="../../static/js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+    *{margin:0;padding:0;}
+    img{display:block;}
+    .banner {width:1920px;height:400px;margin:1% auto;background:url(../../../static/image/back1.jpg);background-size: 100% 100%;overflow:hidden;position:relative;}
+    .banner ul { position:absolute;left:0;top:0;z-index:100;}
+    .banner ul li { display:block;width:1920px;height:400px;float:left;}
+    .banner .con { position:absolute; left:45%; bottom:3%;z-index:101; }
+    .banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
+    .banner .con a.active { background:#fff;}
+    .banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
+    .banner .left { position:absolute; top:40%;left:2%;z-index:103;}
+    .banner .right { position:absolute; top:40%;right:2%;z-index:103;}
+</style>
+<div class="banner">
+	<ul>
+		<li>
+			<img style="position:absolute;left:735px;top:50px;" src="../../../static/image/1.jpg" />
+		</li>
+        <li>
+			<div style="position:absolute;left:2455px;top:195px;" ><span style="color: #cb1d1d">click me</span></div>
+			<img style="position:absolute;left:2655px;top:50px;" src="../../../static/image/2.jpg" />
+		</li>
+        <li>
+			<img style="position:absolute;left:4575px;top:50px;" src="../../../static/image/3.jpg" />
+		</li>
+    </ul>
+    
+    <div class="con"></div>
+    
+    <div class="u left"><img src="../../../static/image/large_left.png"></div>
+    <div class="u right"><img src="../../../static/image/large_right.png"></div>
+    
+</div>
+
+
+<script type="text/javascript">
+	var index = 0;
+	var imgnum = $('.banner ul li').length;
+	var nmun='';
+	var imgwidth = $('.banner ul li').width();
+	var allimgwidth = imgwidth*imgnum;
+	$('.banner ul').css('width',allimgwidth);
+	
+	
+	$('.banner').hover(function(){
+		clearInterval(p);
+		$('.banner .u').fadeIn();
+	},function(){
+		pic();
+		$('.banner .u').fadeOut();
+		});
+	
+	function pic(){
+		
+		p=setInterval(function(){
+			index++;
+			
+			if(index>=imgnum){
+				index=0;
+			}
+			
+			selectimg(index);
+            selectbackimg(index+1);
+
+		},3000);  /*1000为变更时间间隔*/
+		
+	}
+
+    function selectbackimg(index){
+        $('.banner').css('background','url(../../../static/image/back'+index+'.jpg)');
+        $('.banner').css('background-size','100% 100%');
+        //$('.banner').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
+    }
+	
+	function selectimg(index){
+/*	    var marginsize1 = -1;
+	    switch (index) {
+			case 0:
+                $('.banner ul').animate({'margin-left':'-' + 0 + 'px'},600);   /!*600为滑动速度*!/
+			case 1:
+                $('.banner ul').animate({'margin-left':'-' + 1500 + 'px'},600);   /!*600为滑动速度*!/
+			case 2:
+                $('.banner ul').animate({'margin-left':'-' + 3000 + 'px'},600);   /!*600为滑动速度*!/
+        }*/
+		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);   /*600为滑动速度*/
+		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+	}
+	
+	
+	$('.banner .left').click(function(){
+		index-=1;
+		if(index<0){
+				index=imgnum-1;
+			}
+		selectimg(index);
+		
+	});
+	
+	$('.banner .right').click(function(){
+		index+=1;
+		if(index>imgnum-1){
+				index=0;
+			}
+		selectimg(index);
+		
+	});
+	
+	for(var ni=0;ni<imgnum;ni++){
+		nmun +="<a href='javascript:;'></a>";
+	}
+	$('.banner .con').html(nmun);
+	$('.banner .con a').eq(0).addClass('active');
+	
+	$('.con a').each(function(i){
+		$(this).click(function(){
+		    index=i;
+			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
+			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+		});
+	});	
+	
+	pic();
+</script>

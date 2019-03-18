@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>banner轮播图，响应式动画图片滑动切换效果</title>
+<meta name="description" content="banner轮播图，响应式动画图片滑动切换效果，http://www.youhutong.com">
+<style>
+.button{padding:10px 20px; background:#279FBB}
+</style>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="../../static/banner/css/demo.css">
+<iframe src="http://www.youhutong.com/demo/top.php" width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="no" border="0"></iframe>
+<div style="text-align:center; font-size:20px; font-weight:bold; margin-bottom:30px;">banner轮播图，响应式动画图片滑动切换效果 - 演示</div>
+
+
+<!-- 演示区 start -->
+<link rel="stylesheet" type="text/css" href="../../static/banner/css/style.css" />
+<script  type="text/javascript" src="../../static/banner/jquery.js"></script>
+<script type="text/javascript" src="../../static/banner/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="../../static/banner/jquery.themepunch.revolution.min.js"></script>
+
+<div class="tp-banner-container">
+	<div class="tp-banner">
+		<ul>
+			  <li  data-transition="slideleft" data-slotamount="14">
+				<img src="../../static/banner/images/bg1.jpg" />
+				<div class="caption sfb" 
+                    data-x="693" 
+                    data-y="75" 
+                    data-speed="700" 
+                    data-start="0"
+                    data-easing="easeOutBack">
+                        <img src="../../static/banner/images/ipad.png" />
+                </div>		
+				<div class="tp-caption slider-text-title sft str" style="font-size:24px"
+                    data-x="20" 
+                    data-y="150" 
+                    data-speed="300" 
+                    data-start="800" 
+                    data-easing="easeOutCubic" 
+                    data-end="6000" 
+                    data-endspeed="500">
+                        小川编程
+                </div>
+                <div class="tp-caption slider-text-description sft str"  
+                    data-x="20" 
+                    data-y="200" 
+                    data-start="1000" 
+                    data-easing="easeOutBack" 
+                    data-end="4500" 
+                    data-endspeed="500">
+                        PHP案例教程|源码免费下载学习!
+                </div>
+                <div class="tp-caption slider-text-description sft str"  
+                    data-x="20" 
+                    data-y="280" 
+                    data-start="1500" 
+                    data-easing="easeOutBack" 
+                    data-end="5000" 
+                    data-endspeed="500">
+                        <a href="#" class="button btn-flat">点击进入</a>
+                </div>   
+			</li>
+			<li data-transition="boxslide" data-slotamount="7" data-masterspeed="300" >
+				<img src="../../static/banner/images/bg2.jpg"  alt="darkblurbg"   data-fullwidthcentering="on">
+                <div class="tp-caption lfr stb stl"
+                    data-x="751"
+                    data-y="200"
+                    data-speed="1000"
+                    data-start="1000"
+                    data-easing="easeOutExpo" 
+                    data-end="6000" 
+                    data-endspeed="500">
+                        <img src="../../static/banner/images/iphone.png">
+                </div>
+                <div class="tp-caption slider-text-title sft str" style="font-size:24px;color:#fff;"
+                    data-x="20"
+                    data-y="150"
+                    data-speed="300"
+                    data-start="800"
+                    data-easing="easeOutCubic" 
+                    data-end="6000" 
+                    data-endspeed="500">
+                        小川编程网
+                </div>
+                <div class="tp-caption slider-text-description sft str" style="color:#fff;"  
+                    data-x="20" 
+                    data-y="200" 
+                    data-start="1000" 
+                    data-easing="easeOutBack" 
+                    data-end="4500" 
+                    data-endspeed="500">
+                        PHP免费自学教程，就在小川编程！
+                </div>
+                <div class="tp-caption slider-text-description sft str"  
+                    data-x="20" 
+                    data-y="280" 
+                    data-start="1500" 
+                    data-easing="easeOutBack" 
+                    data-end="5000" 
+                    data-endspeed="500">
+                        <a href="#" class="button btn-flat">点击进入</a>
+                </div>  
+			</li>
+		</ul>
+		<div class="tp-bannertimer"></div>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('.tp-banner').revolution({
+		delay:5000,
+		startwidth:1200,
+		startheight:500,
+		hideThumbs:10,
+		fullWidth:"on",
+		forceFullWidth:"on",
+		onHoverStop:"on"
+	});
+});
+</script>
+<!-- 演示区 end -->
+
+
+
+
+<iframe src="http://www.youhutong.com/demo/footer.php" width="100%" height="100%" marginwidth="0" marginheight="0" frameborder="no" border="0"></iframe>
+</body>
+</html>

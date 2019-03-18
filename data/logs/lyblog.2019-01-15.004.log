@@ -1,0 +1,2 @@
+2019/01/15 08:15:21.352 [main.go:779]  [ORM] sqlD:/gopath/src/github.com/jicg/liteblog/models/user.go:211.5140866sSELECT * FROM "users"  WHERE "users"."deleted_at" IS NULL AND ((email = ? and pwd = ?)) LIMIT 1[admin@qq.com 123123] 1
+2019/01/15 08:15:34.185 [main.go:779]  [ORM] sqlD:/gopath/src/github.com/jicg/liteblog/models/photoalbum.go:43109.0062msSELECT * FROM "phoalbs"  WHERE "phoalbs"."deleted_at" IS NULL AND ((1=1)) ORDER BY updated_at DESC[] 12

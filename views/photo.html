@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>RelaxHeart - 导航</title>
+    <link rel="stylesheet" href="/static/css/list.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <!-- layui.css -->
+    <link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css">
+    <!-- http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css -->
+    <link href="//libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- font-awesome.min.css -->
+    <link rel="stylesheet" type="text/css" href="//layui.hcwl520.com.cn/font-awesome-v4.7.0/css/font-awesome.min.css?v=201801090202" />
+    <script src="/static/js/common.js"></script>
+    <!-- jquery-3.3.1.min.js -->
+    <script src="https://layui.hcwl520.com.cn/jquery/jquery-3.3.1.min.js?v=201804251754"></script>
+    <!-- layui.js -->
+    <script src="https://layui.hcwl520.com.cn/layui/layui.js?v=201801090202"></script>
+    <!-- layer.js -->
+    <script src="/static/js/layer.js"></script>
+    <!-- bootstrap.min.js -->
+    <script src="https://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+{{template "comm/link.html"}}
+    <link href="../static/css/buju.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/sliders.js"></script>
+    <style type="text/css">
+        .main-header-div{
+            position: fixed;
+            z-index: 100;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 70px;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div{
+            position: fixed;
+            z-index: 101;
+            top: 0px;
+            left: 0px;
+            width: 1002px;
+            height: 46px;
+            background: white;
+            margin-left:450px;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div2{
+            position: fixed;
+            z-index: 101;
+            top: 10px;
+            left: 0px;
+            height: 46px;
+            width: 100%;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .content {
+            position: relative;
+            top: 50px;
+            /*line-height: 70px;*/
+        }
+        .body-back{
+            /*font-family: "华文细黑";*/
+            background:url("/static/image/timg.jpg") no-repeat;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size: 100%;
+        }
+    </style>
+
+    <script>
+        layui.use(['form'], function() {
+            var form = layui.form;
+        })
+    </script>
+    <style>
+        .list-title{
+            text-align: left;
+        }
+        .refresh-btn2:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body  class="body-back" {{/*style="background-color: #f3f6f7"*/}} id="body">
+{{template "comm/header_tutu.html".}}
+<center>
+    <div class="list-head-div">
+        <div class="div-1280px list-title layui-form layui-form-item">
+        希望下面的推荐，能给您带来一场说走就走的旅行。
+    </div>
+    </div>
+
+    <div class="div-1280px" style="margin-top: 30px; width: 1280px; margin-bottom: 100px; overflow-x: hidden">
+        <div class="website-div-pub">
+            <div class="menu-web-link-div" style="background-color: #ff7c4d">
+                <p class="menu-web-link-title"><span class="fa fa-plane"></span>旅行攻略 / 资讯
+                    <span class="fa fa-exclamation-circle" id="lvyou-tishi" style="float: right" onmouseover="layer.tips('站长认为真正好的产品，其实现在都是很多旅游自媒体人在做。很深度的玩法，比较小众的。毕竟未来产品的方向是：小众的才是大众的，所以这里只收集了一些相对小众且做的很优秀的平台。', '#lvyou-tishi', {tips: [1, '#3595CC'],time: 20000});" onmouseout="layer.closeAll()"></span>
+                </p>
+                <p class="menu-web-links">
+                    <a onclick="window.open('http://www.mafengwo.cn/')" class="menu-web-link">马蜂窝</a>
+                    <a onclick="window.open('https://www.tripadvisor.cn/')" class="menu-web-link">猫途鹰</a>
+                    <a onclick="window.open('http://www.youxiake.com/?source=baidu')" class="menu-web-link">游侠客</a>
+                    <a onclick="window.open('http://www.qyer.com/')" class="menu-web-link">穷游网</a>
+                    <a onclick="window.open('http://chanyouji.com/')" class="menu-web-link">蝉游记</a>
+                    <a onclick="window.open('http://www.cyw.com/xuanze/chengshi/')" class="menu-web-link">村游网</a>
+                    <a onclick="window.open('http://www.1b1u.com/')" class="menu-web-link">帮游旅行网</a>
+                    <a onclick="window.open('http://www.sijiau.com/')" class="menu-web-link">私家旅行</a>
+                    <a onclick="window.open('http://www.yuelvxing.com/')" class="menu-web-link">悦旅行</a>
+                    <a onclick="window.open('http://www.hualvtu.com/')" class="menu-web-link">画旅途</a>
+                    <a onclick="window.open('http://www.feekr.com/')" class="menu-web-link">Feekr</a>
+                    <a onclick="window.open('https://www.8264.com/list/751/')" class="menu-web-link">8264户外</a>
+                </p>
+            </div>
+            <div class="menu-web-link-div" style="background-color: #19c6e0">
+                <p class="menu-web-link-title"><span class="fa fa-image"></span>摄影</p>
+                <p class="menu-web-links">
+                    <a onclick="window.open('http://7mx.com')" class="menu-web-link">7MX</a>
+                    <a onclick="window.open('https://tuchong.com/')" class="menu-web-link">图虫</a>
+                    <a onclick="window.open('https://500px.com/')" class="menu-web-link">500px</a>
+                    <a onclick="window.open('http://www.poco.cn/')" class="menu-web-link">泡客</a>
+                    <a onclick="window.open('http://www.lofter.com/login?urschecked=true')" class="menu-web-link">lofter乐乎</a>
+                    <a onclick="window.open('http://ww.xitek.com/')" class="menu-web-link">色影无忌</a>
+                    <a onclick="window.open('http://www.fengniao.com/')" class="menu-web-link">蜂鸟网</a>
+                    <a onclick="window.open('http://www.leica.org.cn/')" class="menu-web-link">Leica中文摄影杂志</a>
+                    <a onclick="window.open('https://ycg.qq.com/')" class="menu-web-link">腾讯原创馆</a>
+                    <a onclick="window.open('https://fotomen.cn/')" class="menu-web-link">摄影之友</a>
+                    <a onclick="window.open('http://www.fsbus.com/')" class="menu-web-link">摄影巴士</a>
+                </p>
+            </div>
+            <div class="menu-web-link-div" style="background-color: #2bcc6b">
+                <p class="menu-web-link-title"><span class="fa fa-home"></span>住宿</p>
+                <p class="menu-web-links">
+                    <a onclick="window.open('http://www.tuniu.com/')" class="menu-web-link">途牛</a>
+                    <a onclick="window.open('http://www.ctrip.com/')" class="menu-web-link">携程</a>
+                    <a onclick="window.open('https://www.qunar.com/')" class="menu-web-link">去哪儿</a>
+                    <a onclick="window.open('http://www.elong.com/')" class="menu-web-link">艺龙</a>
+                    <a onclick="window.open('http://www.mafengwo.cn/')" class="menu-web-link">马蜂窝</a>
+                    <a onclick="window.open('https://www.tujia.com/')" class="menu-web-link">途家网</a>
+                    <a onclick="window.open('https://www.ly.com/')" class="menu-web-link">同程</a>
+                    <a onclick="window.open('https://www.booking.com/')" class="menu-web-link">booking</a>
+                    <a onclick="window.open('https://www.agoda.com/zh-cn/')" class="menu-web-link">agoda</a>
+                    <a onclick="window.open('https://www.hotels.cn/')" class="menu-web-link">hotels</a>
+                    <a onclick="window.open('https://www.tripadvisor.cn/')" class="menu-web-link">猫途鹰</a>
+                    <a onclick="window.open('https://www.haoqiao.com/')" class="menu-web-link">好巧网</a>
+                </p>
+            </div>
+            <div class="menu-web-link-div" style="background-color: #c275df">
+                <p class="menu-web-link-title"><span class="fa fa-map-marker"></span>出行租车</p>
+                <p class="menu-web-links">
+                    <a onclick="window.open('http://market.1hai.cn/')" class="menu-web-link">一嗨租车</a>
+                    <a onclick="window.open('https://reformcars.izuche.com')" class="menu-web-link">首汽租车</a>
+                    <a onclick="window.open('https://www.zuche.com/')" class="menu-web-link">神州租车</a>
+                    <a onclick="window.open('https://reformcars.izuche.com')" class="menu-web-link">首汽租车</a>
+                </p>
+            </div>
+        </div>
+        <div class="main2layoutLeft">
+            <div class="layout-list-title-div">专栏
+                <span class="flush-list" id="refresh-btn" style="font-size: 12px"><span class="fa fa-undo"></span>换一批</span>
+            </div>
+            <div id="special-column-div"></div>
+        </div>
+
+        <div class="main6layout">
+            <div class="layout-list-title-div"> <b>出游推荐</b> 旅游景点信息 [排名不分先后]</div>
+            <div class="tuijian-left-div">
+                <img src="http://stopic01.ifeekr.com/2013/07/19/0704493a2e4291b6f56ae762aa7dbf5cb95da2.jpg!210X148"  class="tuijian-zhutu">
+                <div class="tuijian-link-div">
+                    <p class="tuijian-title"><b>【 看海 】</b> 收拾行囊，看海去 </p>
+                    <a target="_blank" href="http://www.feekr.com/jshow/dongjidao" class="tuijian-link">东极岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/gulangyu" class="tuijian-link">鼓浪屿</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/penglai" class="tuijian-link">蓬莱</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/weizhoudao" class="tuijian-link">涠洲岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/kending" class="tuijian-link">垦丁</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/qingdao" class="tuijian-link">青岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/weihai" class="tuijian-link">威海</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/dalian" class="tuijian-link">大连</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/sanya" class="tuijian-link">三亚</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/pujidao" class="tuijian-link">普吉岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/badiya" class="tuijian-link">芭堤雅</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/chongsheng" class="tuijian-link">冲绳</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/changtandao" class="tuijian-link">长滩岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xiaweiyi" class="tuijian-link">夏威夷</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/huangjinhaian" class="tuijian-link">黄金海岸</a>
+                </div>
+            </div>
+            <div class="tuijian-right-div">
+                <img src="http://stopic01.ifeekr.com/2013/07/19/071743a5ef72588ca57d57868ca2b54119537c.jpg!210X148" class="tuijian-zhutu">
+                <div class="tuijian-link-div">
+                    <p class="tuijian-title"><b>【 摄影 】</b> 镜头里的梦幻世界 </p>
+                    <a target="_blank" href="http://www.feekr.com/jshow/wuyuan" class="tuijian-link">婺源</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/taishan" class="tuijian-link">泰山</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yuanyang" class="tuijian-link">元阳</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/jiuzhaigou" class="tuijian-link">九寨沟</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xizang" class="tuijian-link">西藏</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/qinghai" class="tuijian-link">青海</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xinjiang" class="tuijian-link">新疆</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/niboer" class="tuijian-link">尼泊尔</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/jianpuzhai" class="tuijian-link">柬埔寨</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/sililanka" class="tuijian-link">斯里兰卡</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yindu" class="tuijian-link">印度</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/faguo" class="tuijian-link">法国</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/bingdao" class="tuijian-link">冰岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/kenniya" class="tuijian-link">肯尼亚</a>
+                </div>
+            </div>
+            <div class="tuijian-left-div">
+                <img src="http://stopic01.ifeekr.com/2013/07/19/0714272216925c6e3fbb0f8ed61dd4ee8d813b.jpg!210X148"  class="tuijian-zhutu">
+                <div class="tuijian-link-div">
+                    <p class="tuijian-title"><b>【 古城 】</b> 穿越千年的记忆  </p>
+                    <a target="_blank" href="http://www.feekr.com/jshow/fenghuang" class="tuijian-link">凤凰</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/pingyao" class="tuijian-link">平遥</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/danba" class="tuijian-link">丹巴</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/beijing" class="tuijian-link">北京</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xian" class="tuijian-link">西安</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yunnanlijiang" class="tuijian-link">丽江</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/dali" class="tuijian-link">大理</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/nanjing" class="tuijian-link">南京</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/maliujia" class="tuijian-link">马六甲</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/qingzhou" class="tuijian-link">庆州</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/nailiang" class="tuijian-link">奈良</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yelusaleng" class="tuijian-link">耶路撒冷</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/luoma" class="tuijian-link">罗马</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yadian" class="tuijian-link">雅典</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/huasha" class="tuijian-link">华沙</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/kailuo" class="tuijian-link">开罗</a>
+                </div>
+            </div>
+            <div class="tuijian-right-div">
+                <img src="http://stopic01.ifeekr.com/2013/07/19/071143f13eb2cabe5c3bc1d72ba833e0216429.jpg!210X148" class="tuijian-zhutu">
+                <div class="tuijian-link-div">
+                    <p class="tuijian-title"><b>【 情侣 】</b>  一起牵手去旅行  </p>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xihu" class="tuijian-link">西湖</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/fenghuang" class="tuijian-link">凤凰</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/changdao" class="tuijian-link">长岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xianggelila" class="tuijian-link">香格里拉</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yangshuo" class="tuijian-link">阳朔</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/xiamen" class="tuijian-link"> 厦门</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/yunnanlijiang" class="tuijian-link"> 丽江</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/sanya" class="tuijian-link">三亚</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/feiji" class="tuijian-link">斐济</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/beihaidao" class="tuijian-link">北海道</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/balidao" class="tuijian-link"> 巴厘岛</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/weinisi" class="tuijian-link"> 威尼斯</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/bali" class="tuijian-link">巴黎</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/aidingbao" class="tuijian-link">爱丁堡</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/foluolunsa" class="tuijian-link">佛罗伦萨</a>
+                    <a target="_blank" href="http://www.feekr.com/jshow/aiqinhai" class="tuijian-link">爱琴海</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="main6layout">
+            <div class="layout-list-title-div">
+                <b>热门旅游攻略</b> [各地的旅游达人都在为你量身打造最有价值的路线地图]
+                <button class="chang-btn-right"><span class="fa fa-caret-right"></span> </button>
+                <button class="chang-btn-left"><span class="fa fa-caret-left"></span> </button>
+            </div>
+            <div style="position: relative; margin-top: 20px; width: auto; max-width: 5000px;">
+                <a target="_blank" href="http://www.feekr.com/jshow/hangzhou">
+                    <img src="http://gs01.ifeekr.com/2013/07/19/09250761278c6b07465fc91037b4ad4a5073ec.jpg!215X235" class="gonglue_city_img">
+                </a>
+                <a target="_blank" href="http://www.feekr.com/jshow/xiamen">
+                    <img src="http://gs01.ifeekr.com/2013/07/19/0752131a952695b151b953334b09f66e8e614f.jpg!215X235" class="gonglue_city_img">
+                </a>
+                <a target="_blank" href="http://www.feekr.com/jshow/qingdao">
+                    <img src="http://gs01.ifeekr.com/2013/07/19/080533ea8707a5c96c4f0c49c8d2a3916f392b.jpg!215X235" class="gonglue_city_img">
+                </a>
+                <a target="_blank" href="http://www.feekr.com/jshow/sanya">
+                    <img src="http://gs01.ifeekr.com/2013/07/19/0746475146dab50d44457b008bb4082b98721f.jpg!215X235" class="gonglue_city_img">
+                </a>
+            </div>
+        </div>
+
+        <div class="main6layout"><div class="list-title layui-form layui-form-item" style="line-height: 100px;">
+            请先右侧选择你想了解的 K 城市,下方列表会动态加载相关优质内容&nbsp;&nbsp;
+            <span class="fa fa-hand-o-right"></span>
+            <div class="layui-input-inline" style="float: right; margin-top: 32px;">
+                <select name="selectCity" id="selectCity" lay-filter="selectCity">
+                </select>
+            </div>
+        </div></div>
+
+        <div class="main6layout">
+            <div class="layout-list-title-div"> <b><span style="color: #1fa8ff; margin-right: 5px;" class="select-city-name">相册</span>生活中的小点滴</b> [ 柴米油盐 ]
+                <button class="chang-btn-right" id="nextthree"><span class="fa fa-caret-right"></span> </button>
+                <button class="chang-btn-left" id="befthree"><span class="fa fa-caret-left"></span> </button>
+            </div>
+            <!--<p style="line-height: 200px; text-align: center" class="load-info">选择城市后，加载相关景点信息</p>-->
+            <div id="travel-local-info-list">
+                {{range .notes}}
+                    <div class="travel-local-info" onclick="window.open('/simple/photodetails/{{.Key}}')">
+                        <div class="travel-local-text-info">
+                            <b><i>TOP1</i></b>：{{.Title}}
+                        </div>
+                        <div class="travel-local-img-info">
+                            <img src="{{.Files}}" class="allWidth">
+                        </div>
+                    </div>
+                {{end}}
+            </div>
+        </div>
+        <div class="main6layout">
+            <div class="layout-list-title-div"> <b><span style="color: #1fa8ff; margin-right: 5px;" class="select-city-name">相册</span>说走就走的旅行</b> [ 景点推荐 ]
+                <button class="chang-btn-right" id="nextthree2"><span class="fa fa-caret-right"></span> </button>
+                <button class="chang-btn-left" id="befthree2"><span class="fa fa-caret-left"></span> </button>
+            </div>
+            <!--<p style="line-height: 200px; text-align: center" class="load-info">选择城市后，加载相关特色美食信息</p>-->
+            <div id="travel-local-info-list2">
+        {{range .notes1}}
+            <div class="travel-local-info" onclick="window.open('/simple/photodetails/{{.Key}}')">
+                <div class="travel-local-text-info">
+                    <b><i>TOP1</i></b>：{{.Title}}
+                </div>
+                <div class="travel-local-img-info">
+                    <img src="{{.Files}}" class="allWidth">
+                </div>
+            </div>
+        {{end}}
+            </div>
+        </div>
+        <div class="main6layout">
+            <div class="layout-list-title-div"> <b><span style="color: #1fa8ff; margin-right: 5px;" class="select-city-name">相册</span>唇齿生香的美食</b> [ 美食推荐 ]
+                <button class="chang-btn-right" id="nextthree3"><span class="fa fa-caret-right"></span> </button>
+                <button class="chang-btn-left" id="befthree3"><span class="fa fa-caret-left"></span> </button>
+            </div>
+            <!--<p style="line-height: 200px; text-align: center" class="load-info">选择城市后，加载相关住宿信息</p>-->
+            <div id="travel-local-info-list3">
+        {{range .notes2}}
+            <div class="travel-local-info" onclick="window.open('/simple/photodetails/{{.Key}}')">
+                <div class="travel-local-text-info">
+                    <b><i>TOP1</i></b>：{{.Title}}
+                </div>
+                <div class="travel-local-img-info">
+                    <img src="{{.Files}}" class="allWidth">
+                </div>
+            </div>
+        {{end}}
+            </div>
+        </div>
+        <div class="main6layout">
+            <div class="layout-list-title-div">关于 <b><span style="color: #1fa8ff; margin-right: 5px;" class="select-city-name">K城</span>，网友真实评论</b> [ 同样仅供参考 ]
+            </div>
+            <div class="chat-list-div">
+                <p style="line-height: 40px; text-align: left">
+                    <label><input type="radio" name="chat-type">美食</label>
+                    <label><input type="radio" name="chat-type">美景</label>
+                    <label><input type="radio" name="chat-type">住宿</label>
+                </p>
+                <textarea class="chat-list-input" placeholder="我要发表评论"></textarea>
+                <button class="chat-list-btn"><span class="fa fa-send"></span>发表</button>
+            </div>
+            <p style="line-height: 200px; text-align: center" class="load-info">选择城市后，加载相关评论信息列表</p>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</center>
+<div class="header"><p style="line-height: 60px; text-align: center">  <span class="fa fa-spinner fa-pulse"></span></p></div>
+<div class="bottom"></div>
+<!-- SCRIPTS -->
+</body>
+<script>
+    $(".header").load("/to/master/header?m1=list");
+    $(".bottom").load("/to/master/bottom");
+
+    var intthree = 0;
+    var intthree2 = 0;
+    var intthree3 = 0;
+    var count1 = {{.total1}}
+    var count2 = {{.total2}}
+    var count3 = {{.total3}}
+    loadRandList();
+    $("#refresh-btn").on("click", function () {
+        loadRandList();
+    })
+    $("#nextthree").on("click", function () {
+        if (parseInt(count1/3) > intthree){
+            intthree ++;
+            loadNextThree(intthree,1);
+        }
+    })
+
+    $("#befthree").on("click", function () {
+        if (intthree > 0){
+            intthree --;
+        }
+        loadNextThree(intthree,1);
+    })
+
+
+    $("#nextthree2").on("click", function () {
+        if (parseInt(count2/3) > intthree2) {
+            intthree2++;
+            loadNextThree(intthree2, 2);
+        }
+    })
+
+    $("#befthree2").on("click", function () {
+        if (intthree2 > 0){
+            intthree2 --;
+        }
+        loadNextThree(intthree2,2);
+    })
+
+
+    $("#nextthree3").on("click", function () {
+        if (parseInt(count3/3) > intthree3) {
+            intthree3++;
+            loadNextThree(intthree3, 3);
+        }
+    })
+
+    $("#befthree3").on("click", function () {
+        if (intthree3 > 0){
+            intthree3 --;
+        }
+        loadNextThree(intthree3,3);
+    })
+    function loadNextThree(intthree, type) {
+        $.ajax({
+            url:"/nextthree/"+type+"/"+intthree,
+            type:"get",
+            success:function (data) {
+                data = eval(data);
+                if (data.code == 0){
+
+                    switch (type) {
+                        case 1:
+                            $("#travel-local-info-list").empty();// 清空原来的
+                            break;
+                        case 2:
+                            $("#travel-local-info-list2").empty();// 清空原来的
+                            break;
+                        case 3:
+                            $("#travel-local-info-list3").empty();// 清空原来的
+                            break;
+                    }
+
+                    data = data.data;
+                   // $("#special-column-div").empty();
+                    $.each(data, function (index, value) {
+                         // 加载新的
+                        var details = "/simple/photodetails/" + value.key
+                         var div1 = "<div class=\"travel-local-info\" onclick=\"window.open('"+details+"')\"><div class=\"travel-local-text-info\"><b><i>TOP1</i></b>："+value.title+"</div><div class=\"travel-local-img-info\"><img src=\""+value.picture+"\" class=\"allWidth\"></div></div>";
+
+                        switch (type) {
+                            case 1:
+                                $("#travel-local-info-list").append(div1);
+                                break;
+                            case 2:
+                                $("#travel-local-info-list2").append(div1);
+                                break;
+                            case 3:
+                                $("#travel-local-info-list3").append(div1);
+                                break;
+                        }
+                    });
+                } else {
+                    $("#special-column-div").append("<p style='line-height: 100px;'>相册列表加载失败</p>");
+                }
+            }
+        })
+    }
+
+    function loadRandList() {
+        $.ajax({
+            url:"/column/query",
+            type:"get",
+            success:function (data) {
+                data = eval(data);
+                if (data.code == 0){
+                    data = data.data;
+                    $("#special-column-div").empty();
+                    $.each(data, function (index, value) {
+//                         var div = "<div class=\"zhuanlan-divs\" onclick=\"window.open('"+value.link+"')\"><img src=\""+value.img+"\" style=\"width: 100%\"><span class=\"zhuanlan-title\">"+value.name+"</span></div>";
+                        var div = "<div class=\"travel-local-info\" style='width: 100%; margin: -15px auto; box-shadow: none' onclick=\"window.open('"+value.link+"')\"><div style='text-align: left; font-size: 13px; line-height: 16px; margin-bottom: 7px; color: #656565'>"+value.title+"</div><div class=\"travel-local-img-info\" style='border-radius: 0px'><img src=\""+value.picture+"\" class=\"allWidth\" style='border-radius: 0px'></div></div>";
+                        $("#special-column-div").append(div);
+                    });
+                    $("#special-column-div").append("<p class='refresh-btn2' style=\"line-height:60px;font-size: 12px; margin-top: 60px; margin-bottom: 30px;\" onclick=\"loadRandList();\"><span class=\"fa fa-undo\"></span>换一批</p>");
+                } else {
+                    $("#special-column-div").append("<p style='line-height: 100px;'>专栏列表加载失败</p>");
+                }
+            }
+        })
+    }
+
+    $.ajax({
+        url:"/sign/query/list-city",
+        type:"get",
+        success:function (data) {
+            data = eval(data);
+            var signConf = data.data;
+            var signs = new Array;
+            signs = signConf.split("&");
+            $("#selectCity").append("<option value=''>请选择</option>");
+            for (var i = 0; i < signs.length; i++){
+                $("#selectCity").append("<option value='"+signs[i]+"'>"+signs[i]+"</option>");
+            }
+        }
+    })
+
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+                ,form = layui.form;
+
+        form.on('select(selectCity)', function(data){
+            layer.msg("默认西安（功能测试中）");
+            $(".select-city-name").html(data.value);
+            $(".load-info").html("<span class=\"fa fa-spinner fa-pulse\"></span>O ~ O 数据覆盖不全，未加载到相关信息");
+        });
+    });
+</script>
+</html>

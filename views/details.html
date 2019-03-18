@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论-大飞轻博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/css/buju.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    {{template "comm/link.html"}}
+    <style type="text/css">
+        .main-header-div{
+            position: fixed;
+            z-index: 100;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 70px;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div{
+            position: fixed;
+            z-index: 101;
+            top: 0px;
+            left: 0px;
+            width: 1002px;
+            height: 46px;
+            background: white;
+            margin-left:450px;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .main-title-div2{
+            position: fixed;
+            z-index: 101;
+            top: 10px;
+            left: 0px;
+            height: 46px;
+            width: 100%;
+            background: white;
+            /*border-bottom: 1px solid #f3f6f7;*/
+        }
+        .content {
+            position: relative;
+            top: 50px;
+            /*line-height: 70px;*/
+        }
+        .body-back{
+            /*font-family: "华文细黑";*/
+            background:url("/static/image/timg.jpg") no-repeat;
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body class="lay-blog body-back">
+{{template "comm/header_tutu.html".}}
+<div class="container-wrap" style="top: 200px">
+    <div class="container container-message container-details">
+        <div class="contar-wrap">
+            <div class="item">
+                <div class="item-box  layer-photos-demo1 layer-photos-demo">
+                    <h3><a href="#">{{.note.Title}}</a></h3>
+                    <h5>发布于：<span>{{date .note.UpdatedAt "Y-m-d H:i:s"}}</span></h5>
+                    <div class="body" style="overflow-y: auto">
+                    {{str2html .note.Content}}
+                    </div>
+                {{/*<img src="../res/static/image/item.png" alt="">*/}}
+                    <div class="count layui-clear">
+                        <span class="pull-left">阅读 <em>{{.note.Visit}}</em></span>
+                        <span class="pull-right like {{if .praise}}layblog-this{{end}}" data-type="note"
+                              data-key="{{.note.Key}}">
+                            <i class="layui-icon layui-icon-praise"></i>
+                            <em class="value">{{.note.Praise}}</em>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {{if .note.Files}}
+            <div class="item">
+                <div class="item-box  layer-photos-demo1 layer-photos-demo">
+                    <h3>附件下载</h3>
+                    <div id="files" style="display: none">{{.note.Files}}</div>
+                    <div class="layui-upload-list">
+                        <table class="layui-table " lay-skin="line">
+                            <thead>
+                            <tr>
+                                <th>文件名</th>
+                            </tr>
+                            </thead>
+                            <tbody id="demoList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {{end}}
+
+            <a name="comment"> </a>
+            <div class="comt layui-clear">
+                <a href="javascript:;" class="pull-left">评论</a>
+                <a href="/comment/{{.note.Key}}" class="pull-right">写评论</a>
+            </div>
+            <div id="LAY-msg-box">
+            {{range .messages}}
+                {{template "comm/tpl_msg.html" .}}
+                {{end}}
+            </div>
+        </div>
+    </div>
+</div>
+{{template "comm/footer.html".}}
+<script>var note = {userid:{{.note.UserID}},key:{{.note.Key}}};</script>
+<script src="/static/js/detail.js"></script>
+</body>
+</html>

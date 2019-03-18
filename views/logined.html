@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    {{template "comm/link.html"}}
+    <style>
+        .layui-form-label {
+            width: 50px;
+        }
+
+        .layui-input-block {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-width: 450px) {
+            .layui-form-item .layui-input-inline {
+                margin: 0 0 10px 80px;
+            }
+        }
+
+    </style>
+</head>
+<body class="layui-layout-body lay-blog">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">后台管理</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="/">首页</a></li>
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>
+            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    sofija
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            {{if .IsLogin}}
+                <li class="layui-nav-item"><a href="/logout">退出</a></li>
+            {{end}}
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">文章管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/logined/mu1">子菜单一</a></dd>
+                        <dd><a href="/logined/mu2">文章编辑</a></dd>
+                        <dd><a href="/notelist">文章列表</a></dd>
+                        <dd><a href="">超链接</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">相册管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/photolist">相册列表</a></dd>
+                        <dd><a href="/logined/phoalb">相册编辑</a></dd>
+                        <dd><a href="/logined/photos">照片编辑</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">日记管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/riji/list">日记列表</a></dd>
+                        <dd><a href="/riji/edit">日记编辑</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="">菜单四</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;padding-left: 20px;">{{ .TabName}}</div>
+        {{if .IsNoteManager1}}
+            {{template "note_manager.html" .}}
+        {{end}}
+        {{if .IsNoteManager2}}
+            {{/*<iframe src="note_new.html" height= "100%" width="100%" name="leftFrame" scrolling="No"  noresize="noresize"  id="leftFrame"></iframe>*/}}
+            {{template "note_new.html" .}}
+        {{end}}
+        {{if .IsNoteManager3}}
+            {{template "note_manager.html" .}}
+        {{end}}
+        {{if .IsNoteManager4}}
+            {{template "note_manager.html" .}}
+        {{end}}
+        {{if .List}}
+           {{/* {{template "note_list.html" .}}*/}}
+        <table class="layui-hide" id="test"></table>
+        {{end}}
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    {{template "comm/footer.html" .}}
+    </div>
+</div>
+
+<script src="/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的-->
+
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        if ({{ .NoteList}}){
+            table.render({
+                elem: '#test'
+                ,url:'/notelist2'
+                ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                ,cols: [[
+                    {field:'id', width:'10%', title: 'ID', sort: true}
+                    ,{field:'title', width:'20%', title: '标题'}
+                    ,{field:'title', width:'20%', title: '摘要'}
+                    ,{field:'title', width:'10%', title: '类型'}
+                    ,{field:'title', width:'10%', title: '作者'}
+                    ,{field:'title', width:'15%', title: '时间'}
+                    ,{field:'picture', width:'15%', title: '备注',
+                        templet:function (d) { return '<div><img src='+d.picture+'></div>' }}
+                    /*,{field:'sex', width:80, title: '性别', sort: true}
+                    ,{field:'city', width:80, title: '城市'}
+                    ,{field:'sign', title: '签名', width: '30%', minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    ,{field:'experience', title: '积分', sort: true}
+                    ,{field:'score', title: '评分', sort: true}
+                    ,{field:'classify', title: '职业'}
+                    ,{field:'wealth', width:137, title: '财富', sort: true}*/
+                ]]
+            });
+        }
+        if ({{ .PhotoList}}){
+            table.render({
+                elem: '#test'
+                ,url:'/phoalb/list'
+                ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                ,cols: [[
+                    {field:'id', width:'10%', title: 'ID', sort: true}
+                    ,{field:'title', width:'20%', title: '项册名称'}
+                    ,{field:'title', width:'20%', title: '摘要'}
+                    ,{field:'title', width:'10%', title: '类型'}
+                    ,{field:'title', width:'10%', title: '作者'}
+                    ,{field:'title', width:'15%', title: '时间'}
+                    ,{field:'picture', width:'15%', title: '备注',
+                        templet:function (d) { return '<div><img src='+d.picture+'></div>' }}
+                    /*,{field:'sex', width:80, title: '性别', sort: true}
+                    ,{field:'city', width:80, title: '城市'}
+                    ,{field:'sign', title: '签名', width: '30%', minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    ,{field:'experience', title: '积分', sort: true}
+                    ,{field:'score', title: '评分', sort: true}
+                    ,{field:'classify', title: '职业'}
+                    ,{field:'wealth', width:137, title: '财富', sort: true}*/
+                ]]
+            });
+        }
+        if ({{ .RijiList}}){
+            table.render({
+                elem: '#test'
+                ,url:'/riji/control/list'
+                ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                ,cols: [[
+                    {field:'id', width:'10%', title: 'ID', sort: true}
+                    ,{field:'title', width:'20%', title: '项册名称'}
+                    ,{field:'title', width:'20%', title: '摘要'}
+                    ,{field:'title', width:'10%', title: '类型'}
+                    ,{field:'title', width:'10%', title: '作者'}
+                    ,{field:'title', width:'15%', title: '时间'}
+                    ,{field:'picture', width:'15%', title: '备注',
+                        templet:function (d) { return '<div><img src='+d.picture+'></div>' }}
+                    /*,{field:'sex', width:80, title: '性别', sort: true}
+                    ,{field:'city', width:80, title: '城市'}
+                    ,{field:'sign', title: '签名', width: '30%', minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    ,{field:'experience', title: '积分', sort: true}
+                    ,{field:'score', title: '评分', sort: true}
+                    ,{field:'classify', title: '职业'}
+                    ,{field:'wealth', width:137, title: '财富', sort: true}*/
+                ]]
+            });
+        }
+    });
+</script>
+</body>
+</html>
